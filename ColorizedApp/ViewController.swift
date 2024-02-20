@@ -1,75 +1,25 @@
 import UIKit
 
-final class ViewController: UIViewController {
+protocol SetColorViewControllerDelegate: AnyObject {
+    func setBackgroundColor(_ color: UIColor)
+}
 
-    @IBOutlet weak var colorizedView: UIView!
-    
-    @IBOutlet weak var redValueLabel: UILabel!
-    @IBOutlet weak var greenValueLabel: UILabel!
-    @IBOutlet weak var blueValueLabel: UILabel!
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    
+class ViewController: UIViewController {
+
     override func viewDidLoad() {
-        redSlider.value = Float.random(in: 0...1)
-        greenSlider.value = Float.random(in: 0...1)
-        blueSlider.value = Float.random(in: 0...1)
-        
-        redValueLabel.text = string(from: redSlider)
-        greenValueLabel.text = string(from: greenSlider)
-        blueValueLabel.text = string(from: blueSlider)
-        
-        setupColorView(
-            red: redSlider.value,
-            green: greenSlider.value,
-            blue: blueSlider.value
-        )
+        super.viewDidLoad()
+
+        view.backgroundColor = .white
     }
     
-    @IBAction private func sliderActions(_ sender: UISlider) {
-        switch sender.tag {
-        case 0:
-            redValueLabel.text = string(from: sender)
-            setupColorView(
-                red: redSlider.value,
-                green: greenSlider.value,
-                blue: blueSlider.value
-            )
-        case 1:
-            greenValueLabel.text = string(from: sender)
-            setupColorView(
-                red: redSlider.value,
-                green: greenSlider.value,
-                blue: blueSlider.value
-            )
-        default:
-            blueValueLabel.text = string(from: sender)
-            setupColorView(
-                red: redSlider.value,
-                green: greenSlider.value,
-                blue: blueSlider.value
-            )
-        }
-    }
-    
-    private func setupColorView(red: Float, green: Float, blue: Float) {
-        colorizedView.backgroundColor = UIColor(
-            red: red.cgFloat(),
-            green: green.cgFloat(),
-            blue: blue.cgFloat(),
-            alpha: 1
-        )
-    }
-    
-    private func string(from slider: UISlider) -> String {
-        String(format: "%.2f", slider.value)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let setColorVC = segue.destination as? SetColorViewController
+        setColorVC?.delegate = self
     }
 }
 
-extension Float {
-    func cgFloat() -> CGFloat {
-        CGFloat(self)
+extension ViewController: SetColorViewControllerDelegate {
+    func setBackgroundColor(_ color: UIColor) {
+        view.backgroundColor = color
     }
 }
