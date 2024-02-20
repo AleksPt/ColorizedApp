@@ -47,8 +47,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-1h-RU2" userLabel="Main Stack">
-                                <rect key="frame" x="16" y="237" width="343" height="196"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xCI-1h-RU2" userLabel="Main Stack">
+                                <rect key="frame" x="16" y="217" width="343" height="162"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lHd-Un-CJs" userLabel="Red Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
@@ -89,7 +89,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-iB-aQA" userLabel="Green Stack">
-                                        <rect key="frame" x="0.0" y="81" width="343" height="34"/>
+                                        <rect key="frame" x="0.0" y="64" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-X8-R42">
                                                 <rect key="frame" x="0.0" y="7" width="65" height="20.5"/>
@@ -124,7 +124,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-gB-jhM" userLabel="Blue Stack">
-                                        <rect key="frame" x="0.0" y="162" width="343" height="34"/>
+                                        <rect key="frame" x="0.0" y="128" width="343" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-jw-ws9">
                                                 <rect key="frame" x="0.0" y="7" width="65" height="20.5"/>
@@ -183,7 +183,7 @@
                             <constraint firstItem="xCI-1h-RU2" firstAttribute="leading" secondItem="pmi-Uh-f7g" secondAttribute="leading" id="c9I-jc-Uyh"/>
                             <constraint firstItem="pmi-Uh-f7g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="eUJ-lx-SoS"/>
                             <constraint firstItem="pmi-Uh-f7g" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.214592" id="gV5-2m-zBx"/>
-                            <constraint firstItem="xCI-1h-RU2" firstAttribute="top" secondItem="pmi-Uh-f7g" secondAttribute="bottom" constant="50" id="kZg-KY-0AF"/>
+                            <constraint firstItem="xCI-1h-RU2" firstAttribute="top" secondItem="pmi-Uh-f7g" secondAttribute="bottom" constant="30" id="kZg-KY-0AF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pmi-Uh-f7g" secondAttribute="trailing" constant="16" id="sah-ho-tWH"/>
                             <constraint firstItem="pmi-Uh-f7g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vPS-h7-avR"/>
                             <constraint firstItem="xCI-1h-RU2" firstAttribute="trailing" secondItem="pmi-Uh-f7g" secondAttribute="trailing" id="vw9-WW-jhf"/>
@@ -191,11 +191,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="3dc-DG-1Wk"/>
                     <connections>
+                        <outlet property="blueColorTextField" destination="bAk-eo-7DP" id="IDv-xC-dl1"/>
                         <outlet property="blueSlider" destination="KfC-09-bct" id="fnm-CG-68L"/>
                         <outlet property="blueValueLabel" destination="x6K-iR-ulh" id="3Nd-Vj-BUc"/>
                         <outlet property="colorizedView" destination="pmi-Uh-f7g" id="CSp-Tj-Tbc"/>
+                        <outlet property="greenColorTextField" destination="Ter-EM-DHm" id="Oha-Xy-dUn"/>
                         <outlet property="greenSlider" destination="Vdl-XS-9Mo" id="rSB-rR-C5A"/>
                         <outlet property="greenValueLabel" destination="gUJ-28-cuH" id="hxI-Pp-mbe"/>
+                        <outlet property="redColorTextField" destination="buS-pf-gdO" id="9fn-Aw-ZiG"/>
                         <outlet property="redSlider" destination="0DJ-1P-ilI" id="C4n-7F-uTx"/>
                         <outlet property="redValueLabel" destination="rYE-dq-fwZ" id="rzU-EP-2Go"/>
                     </connections>
